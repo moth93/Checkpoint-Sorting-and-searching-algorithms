@@ -1,0 +1,23 @@
+ALGORITHM insertion_sort
+VAR
+    Tab: ARRAY_OF INTEGER[];;
+    i,j,x: INTEGER;
+BEGIN
+   i:=0;
+   j:=0;
+//on parcourt le tablau case par case
+ FOR i FROM 0 TO Tab.length-1 STEP 1 DO
+    x:=Tab[i]
+    j:=i
+    //on place le Tab[i] dans une variable intermédiare
+      WHILE (j >= 0) DO
+      // On compare le Tab[i] aux cases qui le précèdent, c'est-à-dire les cases de 0 à i-1, à l'aide du compteur j.
+        IF (Tab[j-1] > x) THEN
+        // On parcourt le tableau jusqu'à trouver l'emplacement de tab[i] parmi le sous-tableau de taille i.
+            Tab[j]=Tab[j - 1]
+            Tab[j - 1]=x
+        END_IF
+         j--
+      END_WHILE
+ END_FOR
+END
